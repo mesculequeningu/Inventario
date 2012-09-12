@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+	<title>Inventario</title>
+	<meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Elementos Hardware</h1>
+	{% for elemento in lista %}
+	<ul>
+	  <li><strong>{{elemento.numeroSerie}}</strong></li>
+	  <li>{{elemento.nombre}}</li>
+	</ul>
+	{% endfor %}
+  </body>
+</html>
