@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang='es'>
-  <head>
-	<title>Inventario</title>
-	<meta charset='utf-8'>
-  </head>
-  <body>
-    <h1>Elementos Hardware</h1>
-	{% for elemento in lista %}
-	<ul>
-	  <li><strong>{{elemento.numeroSerie}}</strong></li>
-	  <li>{{elemento.nombre}}</li>
-	</ul>
-	{% endfor %}
-  </body>
-</html>
+{% extends 'base.html' %}
+ 
+{% comment %} Comentarios {% endcomment %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block style_css %}
+  .impar { background-color:#90EE90; }
+  .par { background-color:#5ACC5A; }
+{% endblock %}
+
+{% block encabezado %}
+     <h1>Elementos Hardware</h1>
+{% endblock %}
+
+{% block contenido %}
+    <p>
+    	Actulamente tenemos registrados:
+    	{% with total=lista.count %}
+    		{{total}} elementos{{total|pluralize}}
+    	{% endwith %}
+    </p>
+    <ul>
+    	{% for elemento in lista %}
+	    	<ul>
+			  <li class="{% cycle 'impar' 'par' %}"><strong>{{elemento.numeroSerie}}</strong> {{elemento.nombre}} </li>
+			</ul>
+		{% endfor %}
+    </ul>
+{% endblock %}

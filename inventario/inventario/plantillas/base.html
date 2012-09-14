@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<meta charset='utf-8'>
+	<title>Inventario</title>
+	<style>
+	{% block style_css %}{% endblock %}
+	</style>
+</head>
+<body>
+	<header>
+		{% block encabezado %}{% endblock %}
+		<nav>
+			<ul>
+				<li> <a href="/">Inicio</a> </li>
+				<li> <a href="/elementohardware">Nuevo</a> </li>
+			</ul>
+		</nav>
+		<hr>
+	</header>
+	<section class='contenido'>
+		{% block contenido %}{% endblock %}
+	</section>
+	<footer>
+		<p>Proyecto Inventario de JSJ &copy;2012</p>
+	</footer>
+</body>
+</html>
